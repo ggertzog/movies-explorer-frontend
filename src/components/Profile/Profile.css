@@ -1,0 +1,90 @@
+.profile {
+    margin: 0;
+    margin-top: 70px;
+    padding: 0 auto 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile__form {
+    display: flex;
+    flex-direction: column;
+    width: 410px;
+    text-align: center;
+}
+
+.profile__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 123px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.profile__box {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profile__box:nth-child(3) {
+    margin-top: 17px;
+    padding-top: 17px;
+    box-sizing: border-box;
+    border-top: 1px solid #E8E8E8;
+}
+
+.profile__text {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.profile__input {
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.profile__input::placeholder {
+    text-align: right;
+}
+
+.profile__button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.profile__button_type_submit {
+    margin-top: 220px;
+    margin-bottom: 16px;
+    color:#000;
+}
+
+.profile__button_type_exit {
+    color: #EE3465;
+}
