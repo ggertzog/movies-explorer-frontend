@@ -2,7 +2,7 @@
     background-color: #465DFF;
     display: flex;
     margin: 0;
-    padding: 70px 70px 75px;
+    padding: 73px 70px 75px;
     box-sizing: border-box;
     justify-content: space-between;
 }
@@ -46,6 +46,7 @@
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 3px;
     background: transparent;
+    transition: .3s linear 0s;
 }
 
 .promo__link {
@@ -57,6 +58,11 @@
     font-style: normal;
     line-height: 16px;
     color: #FFF;
+    cursor: pointer;
+}
+
+.promo__button:hover {
+    opacity: 0.8;
 }
 
 .promo__image {
@@ -66,12 +72,12 @@
     height: 304px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 815px) {
     .promo {
         flex-direction: column-reverse;
         align-items: center;
-        padding-top: 138px;
-        padding-bottom: 78px;
+        padding-top: 140px;
+        padding-bottom: 76px;
     }
 
     .promo__container {
@@ -90,7 +96,29 @@
 
     .promo__subtitle {
         margin-top: 22px;
-        margin-bottom: 88px;
+        margin-bottom: 90px;
         max-width: 260px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .promo {
+        padding: 70px 0 30px;
+    }
+    
+    .promo__title {
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: -1.2px;
+    }
+
+    .promo__subtitle {
+        margin-bottom: 80px;
+    }
+
+    .promo__image {
+        width: 210px;
+        height: 206px;
+        margin-bottom: 44px;
     }
 }

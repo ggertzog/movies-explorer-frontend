@@ -7,7 +7,9 @@ export default function Login() {
   return (
     <div className='login'>
         <div className='login__container'>
-            <img className='login__icon' src={logo} alt='Иконка' />
+            <Link className='login__icon-link' to='/'>
+                <img className='login__icon' src={logo} alt='Иконка' />
+            </Link>
             <p className='login__title'>Рады видеть!</p>
             <form className='login__form'>
                 <div className='login__box'>
@@ -22,7 +24,7 @@ export default function Login() {
                 </div>
                 <div className='login__button-container'>
                     <button className='login__button'>Войти</button>
-                    <p className='login__text'>Ещё не зарегестрированы?<Link className='login__link'> Регистрация</Link></p>
+                    <p className='login__text'>Ещё не зарегестрированы?<Link className='login__link' to="/signup"> Регистрация</Link></p>
                 </div>
             </form>
         </div>

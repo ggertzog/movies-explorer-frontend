@@ -10,7 +10,7 @@ export default function MainPage() {
             <h1 className='promo__title'>Учебный проект студента факультета Веб&#8209;разработки.</h1>
             <p className='promo__subtitle'>Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
             <div className='promo__button'>
-              <Link className='promo__link' to='/'>Узнать больше</Link>
+              <a className='promo__link' href='#about-project'>Узнать больше</a>
             </div>
         </div>
         <img className='promo__image' src={planetImage} alt='Планета'/>

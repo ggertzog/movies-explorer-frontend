@@ -69,3 +69,31 @@
     object-fit: cover;
     object-position: center;
 }
+
+@media screen and (max-width: 1160px) {
+    .card__time {
+        line-height: normal;
+    }
+
+    .card__image-container {
+        max-width: 339px;
+    }
+
+    .card__image {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .card__image-container {
+        max-width: 300px;
+    }
+
+    .card__image {
+        height: 168px;
+    }
+
+    .card__time {
+        line-height: normal;
+    }
+}

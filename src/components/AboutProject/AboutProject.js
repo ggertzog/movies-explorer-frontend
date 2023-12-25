@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function AboutProject() {
   return (
-    <div className='about-project'>
+    <div className='about-project' id='about-project'>
         <h2 className='about-project__title'>О проекте</h2>
         <div className='about-project__container'>
             <div className='about-project__box'>
@@ -20,8 +20,8 @@ export default function AboutProject() {
             <div className='about-project__box_type_backend about-project__box_type_gray'><p className='about-project__box_text'>4 неделя</p></div>
         </div>
         <div className='about-project__streak-container'>
-            <div className='about-project__box_type_frontend'><p className='about-project__box_span'>Front-end</p></div>
-            <div className='about-project__box_type_backend'><p className='about-project__box_span'>Back-end</p></div>
+            <div className='about-project__box_type_frontend'><p className='about-project__box_span'>Back-end</p></div>
+            <div className='about-project__box_type_backend'><p className='about-project__box_span'>Front-end</p></div>
         </div>
     </div>
   )
