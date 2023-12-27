@@ -176,6 +176,7 @@
     }
 
     .about-project__content {
+        align-items: center;
         flex-direction: column;
         margin-bottom: 60px;
     }

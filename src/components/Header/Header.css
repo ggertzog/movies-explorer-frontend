@@ -47,18 +47,4 @@
     .header {
         padding: 0 14px;
     }
-
-    .header__auth {
-        margin: 24px 0;
-        gap: 14px;
-    }
-
-    .header__auth_link {
-        font-size: 10px;
-    }
-
-    .header__login {
-        width: 54px;
-        height: 26px;
-    }
 }

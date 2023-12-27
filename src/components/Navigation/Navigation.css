@@ -151,3 +151,19 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 425px) {
+    .navigation__auth {
+        margin: 24px 0;
+        gap: 14px;
+    }
+
+    .navigation__auth_link {
+        font-size: 10px;
+    }
+
+    .navigation__login {
+        width: 54px;
+        height: 26px;
+    }
+}
