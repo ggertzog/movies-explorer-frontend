@@ -5,12 +5,12 @@ import logo from '../../images/logo.svg'
 
 export default function Login() {
   return (
-    <div className='login'>
+    <page className='login'>
         <div className='login__container'>
             <Link className='login__icon-link' to='/'>
                 <img className='login__icon' src={logo} alt='Иконка' />
             </Link>
-            <p className='login__title'>Рады видеть!</p>
+            <h1 className='login__title'>Рады видеть!</h1>
             <form className='login__form'>
                 <div className='login__box'>
                     <label className='login__label'>E-mail</label>
@@ -28,6 +28,6 @@ export default function Login() {
                 </div>
             </form>
         </div>
-    </div>
+    </page>
   )
 }

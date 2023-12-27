@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 
 export default function Main({loggedIn}) {
   return (
-    <div className='main'>
+    <main className='main'>
         <Header
           loggedIn={loggedIn}
         />
@@ -18,6 +18,6 @@ export default function Main({loggedIn}) {
         <Techs />
         <AboutMe />
         <Footer />
-    </div>
+    </main>
   )
 }

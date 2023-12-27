@@ -4,12 +4,12 @@ import React from 'react';
 
 export default function NotFound() {
   return (
-    <div className='not-found'>
+    <page className='not-found'>
         <div className='not-found__container'>
-            <h2 className='not-found__title'>404</h2>
+            <h1 className='not-found__title'>404</h1>
             <p className='not-found__text'>Страница не найдена</p>
             <Link className='not-found__link' to='/'>Назад</Link>
         </div>
-    </div>
+    </page>
   )
 }

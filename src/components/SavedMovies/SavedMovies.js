@@ -8,13 +8,13 @@ import React from 'react';
 export default function SavedMovies({loggedIn}) {
 
   return (
-    <div className='saved-movies'>
+    <section className='saved-movies'>
       <Header 
         loggedIn={loggedIn}
       />
       <SearchForm />
       <MoviesCardList />
       <Footer />
-    </div>
+    </section>
   )
 }

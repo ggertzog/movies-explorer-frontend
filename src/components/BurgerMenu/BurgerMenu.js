@@ -15,9 +15,7 @@ export default function BurgerMenu() {
 
   return (
     <>
-      <div className={`burger-menu ${isBurgerMenuOpen ? 'burger-menu_opened' : ''}`}>
-        
-      </div>
+      <div className={`burger-menu ${isBurgerMenuOpen ? 'burger-menu_opened' : ''}`}></div>
       <input type='checkbox' id='burger-menu__checkbox' className='burger-menu__checkbox' onClick={toggleBurgerMenuVision} />
       <label htmlFor='burger-menu__checkbox' className='burger-menu__label'></label>
       <div className='burger-menu__list'>

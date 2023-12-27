@@ -9,13 +9,13 @@ import React from 'react';
 export default function Movies({loggedIn}) {
 
   return (
-    <div className='movies'>
+    <section className='movies'>
         <Header 
           loggedIn={loggedIn}
         />
         <SearchForm />
         <MoviesCardList />
         <Footer />
-    </div>
+    </section>
   )
 }

@@ -11,8 +11,11 @@ export default function FilterCheckbox() {
 
   return (
     <div className='filter-checkbox'>
-        <button className={`filter-checkbox__button ${button ? 'filter-checkbox__button_active' : 'filter-checkbox__button_disabled'}`} type='button' onClick={toggleButton}>
-            {/* <img className='filter-checkbox__button-image' src={buttonOff} alt='Тумблер' /> */}
+        <button 
+          className={`filter-checkbox__button ${button ? 'filter-checkbox__button_active' : 'filter-checkbox__button_disabled'}`} 
+          type='button' 
+          onClick={toggleButton}
+        >
         </button>
         <p className='filter-checkbox__text'>Короткометражки</p>
     </div>

@@ -25,24 +25,22 @@ export default function Header({loggedIn}) {
     }, []);
 
     return (
-        <>
-            <header className={`header header_theme_${changeColor}`}>
-                <div className='header__container'>
-                    <Link className='header__link' to='/'>
-                        <img className='header__logo' src={headerLogo} alt='лого' />
-                    </Link>
-                    { windowWidth >= 769 ? (
-                        <Navigation 
-                            loggedIn={loggedIn}
-                            page={page}
-                            changeColor={changeColor}
-                        />
-                    ) : (
-                        <BurgerMenu />
-                    )
-                    }
-                </div>
-            </header>
-        </>
+        <header className={`header header_theme_${changeColor}`}>
+            <div className='header__container'>
+                <Link className='header__link' to='/'>
+                    <img className='header__logo' src={headerLogo} alt='лого' />
+                </Link>
+                { windowWidth >= 769 ? (
+                    <Navigation 
+                        loggedIn={loggedIn}
+                        page={page}
+                        changeColor={changeColor}
+                    />
+                ) : (
+                    <BurgerMenu />
+                )
+                }
+            </div>
+        </header>
     )
 }

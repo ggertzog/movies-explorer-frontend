@@ -6,8 +6,8 @@ import cards from '../../utils/cards';
 
 export default function MoviesCardList() {
   return (
-    <>
-      <div className='card-list'>
+    <div className='card-list'>
+      <div className='card-list__content'>
           {cards.map((card) => {
               return (
               <MoviesCard
@@ -17,11 +17,9 @@ export default function MoviesCardList() {
           )
           })}
       </div>
-
-      {/* Можно вынести кнопку в отдельный компонент, чтобы не отображался в сохраненных фильмах */}
       <div className='card-list__container'>
             <button className='card-list__button'>Ещё</button>
       </div>
-    </>
+    </div>
   )
 }

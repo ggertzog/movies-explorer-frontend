@@ -12,11 +12,11 @@ export default function Profile({loggedIn}) {
   }
 
   return (
-    <>
+    <page className='profile'>
       <Header 
         loggedIn={loggedIn}
       />
-      <div className='profile'>
+      <div className='profile__container'>
           <form className='profile__form'>
               <h2 className='profile__title'>Привет, Роман!</h2>
               <div className='profile__box'>
@@ -41,6 +41,6 @@ export default function Profile({loggedIn}) {
               }
           </form>
       </div>
-    </>
+    </page>
   )
 }

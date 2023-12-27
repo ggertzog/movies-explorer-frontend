@@ -59,6 +59,11 @@
     background: url(../../images/flag_on.svg);
 }
 
+.card__button_type_delete {
+    opacity: 100%;
+    background: url(../../images/delete-button.svg);
+}
+
 .card__image-container {
     min-height: 203px;
     max-width: 364px;

@@ -3,9 +3,10 @@ import React from 'react'
 
 export default function Techs() {
   return (
-    <div className='techs'>
+    <section className='techs'>
+      <div className='techs__container'>
         <h2 className='techs__title'>Технологии</h2>
-        <div className='techs__container'>
+        <div className='techs__content'>
             <p className='techs__subtitle'>7 технологий</p>
             <p className='techs__text'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
             <ul className='techs__list'>
@@ -18,6 +19,7 @@ export default function Techs() {
                 <li className='techs__item'>mongoDB</li>
             </ul>
         </div>
-    </div>
+      </div>
+    </section>
   )
 }
