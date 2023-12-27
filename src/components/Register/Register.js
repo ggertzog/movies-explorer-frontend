@@ -14,7 +14,7 @@ export default function Register() {
             <form className='register__form'>
                 <div className='register__box'>
                     <label className='register__label'>Имя</label>
-                    <input className='register__input' />
+                    <input type='text' className='register__input' />
                     <span className='register__span-error'>Что-то пошло не так...</span>
                 </div>
                 <div className='register__box'>
