@@ -5,7 +5,7 @@ import logo from '../../images/logo.svg'
 
 export default function Register() {
   return (
-    <page className='register'>
+    <section className='register'>
         <div className='register__container'>
             <Link className='register__icon-link' to='/'>
                 <img className='register__icon' src={logo} alt='Иконка' />
@@ -14,17 +14,17 @@ export default function Register() {
             <form className='register__form'>
                 <div className='register__box'>
                     <label className='register__label'>Имя</label>
-                    <input type='text' className='register__input' />
+                    <input type='text' className='register__input' placeholder='Имя' required />
                     <span className='register__span-error'>Что-то пошло не так...</span>
                 </div>
                 <div className='register__box'>
                     <label className='register__label'>E-mail</label>
-                    <input type='email' className='register__input' />
+                    <input type='email' className='register__input' placeholder='E-mail' required />
                     <span className='register__span-error'>Что-то пошло не так...</span>
                 </div>
                 <div className='register__box'>
                     <label className='register__label'>Пароль</label>
-                    <input type='password' className='register__input' />
+                    <input type='password' className='register__input' placeholder='Пароль' required />
                     <span className='register__span-error'>Что-то пошло не так...</span>
                 </div>
                 <div className='register__button-container'>
@@ -33,6 +33,6 @@ export default function Register() {
                 </div>
             </form>
         </div>
-    </page>
+    </section>
   )
 }

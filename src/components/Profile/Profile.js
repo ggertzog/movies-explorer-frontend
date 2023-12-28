@@ -1,8 +1,7 @@
-import Header from '../Header/Header';
 import './Profile.css';
 import React, {useState} from 'react';
 
-export default function Profile({loggedIn}) {
+export default function Profile() {
 
   const [editProfile, setEditProfile] = useState(false);
 
@@ -12,10 +11,7 @@ export default function Profile({loggedIn}) {
   }
 
   return (
-    <page className='profile'>
-      <Header 
-        loggedIn={loggedIn}
-      />
+    <section className='profile'>
       <div className='profile__container'>
           <form className='profile__form'>
               <h2 className='profile__title'>Привет, Роман!</h2>
@@ -41,6 +37,6 @@ export default function Profile({loggedIn}) {
               }
           </form>
       </div>
-    </page>
+    </section>
   )
 }

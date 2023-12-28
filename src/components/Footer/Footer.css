@@ -48,6 +48,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.footer__text:hover {
+    opacity: 0.7;
 }
 
 @media screen and (max-width: 768px) {

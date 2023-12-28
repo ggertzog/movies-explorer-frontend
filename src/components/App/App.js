@@ -7,16 +7,25 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import NotFound from '../NotFound/NotFound';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 export default function App() {
 
+  const path = useLocation().pathname;
+  const headerPaths = ['/', '/movies', '/saved-movies', '/profile'];
+  const footerPaths = ['/', '/movies', '/saved-movies'];
+
   const [loggedIn, setLoggedIn] = useState(true);
   
-
-
   return (
     <div className='root'>
+      {headerPaths.includes(path) && (
+        <Header 
+          loggedIn={loggedIn}
+        />
+      )}
       <Routes>
         <Route 
           path='/'
@@ -29,17 +38,13 @@ export default function App() {
         <Route
           path='/movies'
           element= {
-            <Movies 
-              loggedIn={loggedIn}
-            />
+            <Movies />
           }
         />
         <Route
           path='/saved-movies'
           element= {
-            <SavedMovies 
-              loggedIn={loggedIn}
-            />
+            <SavedMovies />
           }
         />
         <Route
@@ -57,9 +62,7 @@ export default function App() {
         <Route 
           path='/profile'
           element={
-            <Profile 
-              loggedIn={loggedIn}
-            />
+            <Profile />
           }
         />
         <Route 
@@ -69,6 +72,9 @@ export default function App() {
           }
         />
       </Routes>
+      {footerPaths.includes(path) && (
+        <Footer />
+      )}
     </div>
   )
 }

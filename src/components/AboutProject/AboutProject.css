@@ -68,38 +68,37 @@
 }
 
 
-.about-project__streak-container {
+.about-project__streak {
     margin: 0;
     padding: 0;
     display: flex;
     width: 100%;
 }
 
-.about-project__box_type_frontend {
+.about-project__streak-container {
     margin: 0;
     padding: 0;
-    width: 228px;
     display: flex;
     justify-content: center;
 }
 
-.about-project__box_type_green {
+.about-project__streak-container_type_backend {
+    width: 228px;
+}
+
+.about-project__streak-container_type_green {
     background: #2BE080;
 }
 
-.about-project__box_type_backend {
-    margin: 0;
-    padding: 0;
+.about-project__streak-container_type_frontend {
     width: calc(100% - 228px);
-    display: flex;
-    justify-content: center;
 }
 
-.about-project__box_type_gray {
+.about-project__streak-container_type_gray {
     background: #F2F2F2;
 }
 
-.about-project__box_text {
+.about-project__streak-container__text {
     margin: 9px 0;
     padding: 0;
     color: #000;
@@ -109,7 +108,7 @@
     line-height: normal;
 }
 
-.about-project__box_span {
+.about-project__streak-container__span {
     margin: 14px 0;
     padding: 0;
     color: #A0A0A0;
@@ -154,11 +153,11 @@
         line-height: 18px;
     }
 
-    .about-project__box_type_frontend {
+    .about-project__streak-container_type_backend {
         width: 140px;
     }
 
-    .about-project__box_type_backend {
+    .about-project__streak-container_type_frontend {
         width: calc(100% - 140px);
     }
 }
@@ -197,20 +196,20 @@
         line-height: 16px;
     }
 
-    .about-project__box_type_frontend {
+    .about-project__streak-container_type_backend {
         width: 100px;
     }
 
-    .about-project__box_type_backend {
+    .about-project__streak-container_type_frontend {
         width: calc(100% - 100px);
     }
 
-    .about-project__box_text {
+    .about-project__streak-container__text {
         font-size: 11px;
         margin: 11px 0;
     }
 
-    .about-project__box_span {
+    .about-project__streak-container__span {
         font-size: 11px;
         margin-top: 10px;
         margin-bottom: 0;

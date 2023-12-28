@@ -16,13 +16,21 @@ export default function AboutProject() {
                     <p className='about-project__text'>У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
                 </div>
             </div>
-            <div className='about-project__streak-container'>
-                <div className='about-project__box_type_frontend about-project__box_type_green'><p className='about-project__box_text'>1 неделя</p></div>
-                <div className='about-project__box_type_backend about-project__box_type_gray'><p className='about-project__box_text'>4 неделя</p></div>
+            <div className='about-project__streak'>
+                <div className='about-project__streak-container about-project__streak-container_type_backend about-project__streak-container_type_green'>
+                    <p className='about-project__streak-container__text'>1 неделя</p>
+                </div>
+                <div className='about-project__streak-container about-project__streak-container_type_frontend about-project__streak-container_type_gray'>
+                    <p className='about-project__streak-container__text'>4 неделя</p>
+                </div>
             </div>
-            <div className='about-project__streak-container'>
-                <div className='about-project__box_type_frontend'><p className='about-project__box_span'>Back-end</p></div>
-                <div className='about-project__box_type_backend'><p className='about-project__box_span'>Front-end</p></div>
+            <div className='about-project__streak'>
+                <div className='about-project__streak-container about-project__streak-container_type_backend'>
+                    <p className='about-project__streak-container__span'>Back-end</p>
+                </div>
+                <div className='about-project__streak-container about-project__streak-container_type_frontend'>
+                    <p className='about-project__streak-container__span'>Front-end</p>
+                </div>
             </div>
         </div>
     </section>

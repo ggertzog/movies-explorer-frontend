@@ -11,8 +11,8 @@ export default function Navigation({loggedIn, page, changeColor}) {
         { loggedIn ? (
             <div className='navigation__container'>
                 <div className='navigation__films'>
-                    <Link className={`navigation__films_link${page.pathname === '/movies' ? '_type_active' : ''} navigation__films_theme_${changeColor}`} to='/movies'>Фильмы</Link>
-                    <Link className={`navigation__films_link${page.pathname === '/saved-movies' ? '_type_active' : ''} navigation__films_theme_${changeColor}`} to='/saved-movies'>Сохранённые фильмы</Link>
+                    <Link className={`navigation__films_link ${page.pathname === '/movies' ? 'navigation__films_link_type_active' : ''} navigation__films_theme_${changeColor}`} to='/movies'>Фильмы</Link>
+                    <Link className={`navigation__films_link ${page.pathname === '/saved-movies' ? 'navigation__films_link_type_active' : ''} navigation__films_theme_${changeColor}`} to='/saved-movies'>Сохранённые фильмы</Link>
                 </div>
                 <div className='navigation__profile'>
                     <Link className={`navigation__profile_link navigation__profile_theme_${changeColor}`} to='/profile'>Аккаунт</Link>

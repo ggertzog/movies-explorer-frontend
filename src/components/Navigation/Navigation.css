@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    display: flex;
 }
 
 .navigation__container {
@@ -115,11 +116,10 @@
 
 .navigation__auth {
     display: flex;
-    margin: 21px 0;
+    margin: 21px 0 21px auto;
     padding: 0;
     gap: 30px;
     align-items: center;
-    align-self: flex-start;
 }
 
 .navigation__auth_link {

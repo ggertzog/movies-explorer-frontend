@@ -5,7 +5,7 @@ import logo from '../../images/logo.svg'
 
 export default function Login() {
   return (
-    <page className='login'>
+    <section className='login'>
         <div className='login__container'>
             <Link className='login__icon-link' to='/'>
                 <img className='login__icon' src={logo} alt='Иконка' />
@@ -14,12 +14,12 @@ export default function Login() {
             <form className='login__form'>
                 <div className='login__box'>
                     <label className='login__label'>E-mail</label>
-                    <input type='email' className='login__input' />
+                    <input type='email' className='login__input' placeholder='E-mail' required />
                     <span className='login__span-error'>Что-то пошло не так...</span>
                 </div>
                 <div className='login__box'>
                     <label className='login__label'>Пароль</label>
-                    <input type='password' className='login__input' />
+                    <input type='password' className='login__input' placeholder='Пароль' required />
                     <span className='login__span-error'>Что-то пошло не так...</span>
                 </div>
                 <div className='login__button-container'>
@@ -28,6 +28,6 @@ export default function Login() {
                 </div>
             </form>
         </div>
-    </page>
+    </section>
   )
 }
