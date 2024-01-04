@@ -1,0 +1,104 @@
+.card {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+    background: #FDFDFD;
+}
+
+.card__container {
+    margin: 0;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 9px;
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card__time {
+    margin: 0;
+    padding: 0;
+    color: #A0A0A0;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+}
+
+.card__button {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    opacity: 50%;
+    transition: .3s ease-in-out 0s;
+}
+
+.card__button_type_disabled {
+    opacity: 100%;
+    background: url(../../images/flag_off.svg) ;
+}
+
+.card__button_type_active {
+    opacity: 100%;
+    background: url(../../images/flag_on.svg);
+}
+
+.card__button_type_delete {
+    opacity: 100%;
+    background: url(../../images/delete-button.svg);
+}
+
+.card__image-container {
+    min-height: 203px;
+    max-width: 364px;
+}
+
+.card__image {
+    height: 203px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and (max-width: 1160px) {
+    .card__time {
+        line-height: normal;
+    }
+
+    .card__image-container {
+        max-width: 339px;
+    }
+
+    .card__image {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .card__image-container {
+        max-width: 300px;
+    }
+
+    .card__image {
+        height: 168px;
+    }
+
+    .card__time {
+        line-height: normal;
+    }
+}
