@@ -18,8 +18,8 @@ export default function MoviesCardList({ movies, saveMovie, deleteMovie, checkSa
   const findMovies = searched ? movies
     .filter(movie => {
       const query = searchQuery.toLowerCase() || '';
-      return ((movie.nameRU || '').toLowerCase().startsWith(query) || 
-              (movie.nameEN || '').toLowerCase().startsWith(query)) && 
+      return ((movie.nameRU || '').toLowerCase().includes(query) || 
+              (movie.nameEN || '').toLowerCase().includes(query)) && 
             (!shortMovie || movie.duration <= 40);
     }).slice(0, films) 
   : [];
