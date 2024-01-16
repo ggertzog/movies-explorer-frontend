@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import profileIcon from '../../images/profile.svg';
 
-export default function BurgerMenu() {
+export default function BurgerMenu({isLoggedIn}) {
 
   const path = useLocation();
 
@@ -18,7 +18,8 @@ export default function BurgerMenu() {
       <div className={`burger-menu ${isBurgerMenuOpen ? 'burger-menu_opened' : ''}`}></div>
       <input type='checkbox' id='burger-menu__checkbox' className='burger-menu__checkbox' onClick={toggleBurgerMenuVision} />
       <label htmlFor='burger-menu__checkbox' className='burger-menu__label'></label>
-      <div className='burger-menu__list'>
+      {isLoggedIn ? (
+        <div className='burger-menu__list'>
           <Link className={`burger-menu__item ${path.pathname === '/' ? 'burger-menu__item_type_active' : ''}`} to='/'>Главная</Link>
           <Link className={`burger-menu__item ${path.pathname === '/movies' ? 'burger-menu__item_type_active' : ''}`} to='/movies'>Фильмы</Link>
           <Link className={`burger-menu__item ${path.pathname === '/saved-movies' ? 'burger-menu__item_type_active' : ''}`} to='/saved-movies'>Сохранённые фильмы</Link>
@@ -28,7 +29,15 @@ export default function BurgerMenu() {
               <img className='burger-menu__profile_image' src={profileIcon} alt='иконка'/>
             </button>
           </div> 
-      </div>
+        </div>
+      ) : (
+        <div className='burger-menu__list'>
+          <Link className={`burger-menu__item ${path.pathname === '/' ? 'burger-menu__item_type_active' : ''}`} to='/'>Главная</Link>
+          <Link className={`burger-menu__item ${path.pathname === '/signup' ? 'burger-menu__item_type_active' : ''}`} to='/signup'>Регистрация</Link>
+          <Link className={`burger-menu__item ${path.pathname === '/signin' ? 'burger-menu__item_type_active' : ''}`} to='/signin'>Авторизация</Link>
+        </div>
+      )}
+      
     </>
   )
 }

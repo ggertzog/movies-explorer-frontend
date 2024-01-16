@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
-export default function Header({loggedIn}) {
+export default function Header({isLoggedIn}) {
 
     const page = useLocation();
 
@@ -32,12 +32,14 @@ export default function Header({loggedIn}) {
                 </Link>
                 { windowWidth >= 769 ? (
                     <Navigation 
-                        loggedIn={loggedIn}
+                        isLoggedIn={isLoggedIn}
                         page={page}
                         changeColor={changeColor}
                     />
                 ) : (
-                    <BurgerMenu />
+                    <BurgerMenu 
+                        isLoggedIn={isLoggedIn}
+                    />
                 )
                 }
             </div>

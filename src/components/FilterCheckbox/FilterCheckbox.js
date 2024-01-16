@@ -1,20 +1,14 @@
 import './FilterCheckbox.css';
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function FilterCheckbox() {
-
-    const [button, setButton] = useState(false);
-
-    const toggleButton = () => {
-        setButton(prevState => !prevState);
-    }
+export default function FilterCheckbox({ isFiltered, onCheckboxChange }) {
 
   return (
     <div className='filter-checkbox'>
         <button 
-          className={`filter-checkbox__button ${button ? 'filter-checkbox__button_active' : 'filter-checkbox__button_disabled'}`} 
+          className={`filter-checkbox__button ${isFiltered ? 'filter-checkbox__button_active' : 'filter-checkbox__button_disabled'}`} 
           type='button' 
-          onClick={toggleButton}
+          onClick={onCheckboxChange}
         >
         </button>
         <p className='filter-checkbox__text'>Короткометражки</p>

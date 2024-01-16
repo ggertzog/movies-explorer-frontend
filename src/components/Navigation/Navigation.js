@@ -5,10 +5,10 @@ import profileIcon from '../../images/profile.svg';
 
 
 
-export default function Navigation({loggedIn, page, changeColor}) {
+export default function Navigation({isLoggedIn, page, changeColor}) {
   return (
     <nav className='navigation'>
-        { loggedIn ? (
+        { isLoggedIn ? (
             <div className='navigation__container'>
                 <div className='navigation__films'>
                     <Link className={`navigation__films_link ${page.pathname === '/movies' ? 'navigation__films_link_type_active' : ''} navigation__films_theme_${changeColor}`} to='/movies'>Фильмы</Link>

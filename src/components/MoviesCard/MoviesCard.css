@@ -69,8 +69,20 @@
     max-width: 364px;
 }
 
-.card__image {
+.card__link {
+    margin: 0;
+    padding: 0;
+    max-width: 364px;
     height: 203px;
+    display: flex;
+    justify-content: center;
+}
+
+.card__image {
+    margin: 0;
+    padding: 0;
+    height: 203px;
+    width: 100%;
     object-fit: cover;
     object-position: center;
 }
@@ -84,9 +96,11 @@
         max-width: 339px;
     }
 
-    .card__image {
+    .card__link {
         height: 190px;
+        max-width: 100%;
     }
+
 }
 
 @media screen and (max-width: 360px) {
@@ -94,7 +108,7 @@
         max-width: 300px;
     }
 
-    .card__image {
+    .card__link {
         height: 168px;
     }
 
