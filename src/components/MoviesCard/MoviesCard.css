@@ -101,6 +101,10 @@
         max-width: 100%;
     }
 
+    .card__image {
+        height: 100%;
+    }
+
 }
 
 @media screen and (max-width: 360px) {
@@ -110,6 +114,10 @@
 
     .card__link {
         height: 168px;
+    }
+
+    .card__image {
+        height: 100%;
     }
 
     .card__time {

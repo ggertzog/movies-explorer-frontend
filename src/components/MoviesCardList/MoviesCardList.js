@@ -1,17 +1,14 @@
 import './MoviesCardList.css';
 
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import MoviesCard from '../MoviesCard/MoviesCard';
 import useResize from '../../hooks/useResize';
 
 export default function MoviesCardList({ movies, saveMovie, deleteMovie, checkSavedMovies, searched, searchQuery, shortMovie }) {
 
-  const page = useLocation();
-
   const screenWidth = useResize();
-  const visibleMovies = screenWidth >= 1280 ? 16 : screenWidth >= 768 ? 8 : 5;
+  const visibleMovies = screenWidth >= 1280 ? 12 : screenWidth >= 768 ? 8 : 5;
 
   const [films, setFilms] = useState(visibleMovies);
 
@@ -28,6 +25,8 @@ export default function MoviesCardList({ movies, saveMovie, deleteMovie, checkSa
     const additionalMovies = screenWidth >= 1280 ? 3 : 2;
     setFilms(films + additionalMovies);
   };
+
+  const isNotAllMovies = films === findMovies.length;
 
   return (
     <div className='card-list'>
@@ -48,14 +47,13 @@ export default function MoviesCardList({ movies, saveMovie, deleteMovie, checkSa
           </div>
         )}
       </div>
-      { page.pathname === '/movies' && (
-        films.length < findMovies.length &&
+      {isNotAllMovies &&
         (
           <div className='card-list__container'>
                 <button className='card-list__button' onClick={handleAddRow}>Ещё</button>
           </div>
         )
-      )}
+      }
     </div>
   )
 }
