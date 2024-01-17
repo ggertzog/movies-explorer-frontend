@@ -49,7 +49,7 @@ export default function App() {
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
     setToken(jwt);
-  }, [token]);
+  }, [token, setToken]);
 
   useEffect(() => {
     if(!token) {
@@ -62,7 +62,7 @@ export default function App() {
         setCurrentUser(data);
       })
       .catch(console.error);
-  }, [token]);
+  }, [token, setIsLoading, setIsLoggedIn, setCurrentUser]);
 
   useEffect(() => {
     if(isLoggedIn) {
@@ -76,7 +76,7 @@ export default function App() {
           setIsLoading(false)
         })
     }
-  }, [isLoggedIn])
+  }, [isLoggedIn, token, setCurrentUser, setSavedMovies, setIsLoading])
 
   const getMovies = () => {
     getAllMovies()
