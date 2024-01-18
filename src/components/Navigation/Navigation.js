@@ -24,9 +24,9 @@ export default function Navigation({isLoggedIn, page, changeColor}) {
         ) : (
             <div className='navigation__auth'>
                 <Link className='navigation__auth_link navigation__auth_type_register' to='/signup'>Регистрация</Link>
-                <div className='navigation__login'>
-                    <Link className='navigation__auth_link navigation__auth_type_login' to='/signin'>Войти</Link>
-                </div>
+                <Link className='navigation__login' to='/signin'>
+                    <p className='navigation__auth_link navigation__auth_type_login'>Войти</p>
+                </Link>
             </div>
         )
         }

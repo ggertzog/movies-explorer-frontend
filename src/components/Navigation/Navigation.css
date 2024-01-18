@@ -130,6 +130,13 @@
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.navigation__auth_link:hover {
+    opacity: 0.7;
+    transition: .5s;
 }
 
 .navigation__auth_type_register {
@@ -144,12 +151,20 @@
     margin: 0;
     padding: 0;
     background-color: #2BE080;
+    text-decoration: none;
     width: 76px;
     height: 32px;
     border-radius: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.navigation__login:hover {
+    opacity: 0.8;
+    transition: .5s;
 }
 
 @media screen and (max-width: 425px) {

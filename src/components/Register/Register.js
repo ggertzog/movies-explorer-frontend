@@ -16,7 +16,7 @@ export default function Register({ registration, isRegister }) {
         registration(values).finally(() => setIsRequesting(false));
     }
 
-    const toggleStateButton = !isValid || isRequesting;
+    const toggleStateButton = !isValid || isRequesting || Object.keys(errors).length > 0;
 
     useEffect(() => {
         resetForm();

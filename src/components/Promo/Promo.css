@@ -54,6 +54,7 @@
     border-radius: 3px;
     background: transparent;
     transition: .3s linear 0s;
+    cursor: pointer;
 }
 
 .promo__link {

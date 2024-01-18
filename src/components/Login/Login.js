@@ -14,7 +14,7 @@ export default function Login({login, errorMessage}) {
         login(values).finally(() => setIsRequesting(false));
     }
 
-    const toggleStateButton = !isValid || isRequesting;
+    const toggleStateButton = !isValid || isRequesting || Object.keys(errors).length > 0;
 
     useEffect(() => {
         resetForm();

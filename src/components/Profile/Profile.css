@@ -5,7 +5,7 @@
 
 .profile__container {
     margin: 0;
-    padding: 70px 0 70px;
+    padding: 75px 0 70px;
     padding-bottom: 70px;
     display: flex;
     justify-content: center;
@@ -124,7 +124,7 @@
 }
 
 .profile__button_type_edit {
-    margin-top: 220px;
+    margin-top: 20px;
     margin-bottom: 16px;
     color:#000;
     font-weight: 400;

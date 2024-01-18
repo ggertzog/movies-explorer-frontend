@@ -30,21 +30,21 @@ export default function Movies({
 
   return (
     <main className='movies'>
-        <SearchForm 
-          searchQuery={searchQuery}
-          shortMovie={shortMovie}
-          handleSearch={handleSearch}
-          toggleMovies={toggleMovies}
-        />
-        <MoviesCardList
-          checkSavedMovies={checkSavedMovies}
-          saveMovie={saveMovie}
-          deleteMovie={deleteMovie}
-          searched={searched}
-          movies={movies}
-          searchQuery={searchQuery}
-          shortMovie={shortMovie}
-        />
+      <SearchForm 
+        searchQuery={searchQuery}
+        shortMovie={shortMovie}
+        handleSearch={handleSearch}
+        toggleMovies={toggleMovies}
+      />
+      <MoviesCardList
+        checkSavedMovies={checkSavedMovies}
+        saveMovie={saveMovie}
+        deleteMovie={deleteMovie}
+        searched={searched}
+        movies={movies}
+        searchQuery={searchQuery}
+        shortMovie={shortMovie}
+      />
     </main>
   )
 }

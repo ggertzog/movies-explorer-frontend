@@ -1,5 +1,7 @@
+const MOVIES_URL = 'https://api.nomoreparties.co'
+
 const getAllMovies = () => {
-    return fetch(`https://api.nomoreparties.co/beatfilm-movies`, {
+    return fetch(`${MOVIES_URL}/beatfilm-movies`, {
         headers: {
             'Content-Type': 'application/json',
         }
@@ -12,4 +14,4 @@ const getAllMovies = () => {
     })
 }
 
-export default getAllMovies;
+export {getAllMovies, MOVIES_URL};

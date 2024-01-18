@@ -34,17 +34,17 @@ export default function SearchForm({
 
   return (
     <div className='search-form'>
-        <form className='search-form__form' name='search' onSubmit={handleSubmit} >
-            <img className='search-form__image' src={searchImage} alt='Лупа' />
-            <input className='search-form__input' name='search' value={values.search || ''} onChange={handleChange} required placeholder='Фильм' />
-            <button className='search-form__button' type='submit'>
-                <img className='search-form__button-image' src={findImage} alt='Поиск' />
-            </button>
-        </form>
-        <FilterCheckbox
-          isFiltered={shortMovie}
-          onCheckboxChange={onToggleMovies}
-        />
+      <form className='search-form__form' name='search' onSubmit={handleSubmit} >
+        <img className='search-form__image' src={searchImage} alt='Лупа' />
+        <input className='search-form__input' name='search' value={values.search || ''} onChange={handleChange} required placeholder='Фильм' />
+        <button className='search-form__button' type='submit'>
+            <img className='search-form__button-image' src={findImage} alt='Поиск' />
+        </button>
+      </form>
+      <FilterCheckbox
+        isFiltered={shortMovie}
+        onCheckboxChange={onToggleMovies}
+      />
     </div>
   )
 }

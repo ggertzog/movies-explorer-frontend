@@ -3,6 +3,7 @@ import './App.css'
 import React,  { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { PageProvider } from '../../contexts/PageContext';
 import { MoviesProvider } from '../../contexts/MoviesContext';
 
 import Footer from '../Footer/Footer';
@@ -16,14 +17,14 @@ import Register from '../Register/Register';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Preloader from '../Preloader/Preloader';
 
-import getAllMovies from '../../utils/MoviesApi';
+import { getAllMovies } from '../../utils/MoviesApi';
 import api from '../../utils/MainApi';
 import * as auth from '../../utils/auth';
 import { correctMoviesFormat } from '../../utils/utils';
 import ProtectedRouteElement from '../../utils/ProtectedRoute';
+import { RESPONSE_MESSAGE } from '../../utils/constants';
 
 export default function App() {
-
   // переменные для отрисовки шапки и подвала
   const path = useLocation().pathname;
   const headerPaths = ['/', '/movies', '/saved-movies', '/profile'];
@@ -37,6 +38,7 @@ export default function App() {
     message: ''
   });
   const [loginFailed, setLoginFailed] = useState('');
+  const [profileMessage, setProfileMessage] = useState('')
   const [currentUser, setCurrentUser] = useState({});
 
   // переменные филтрации и поиска
@@ -123,43 +125,41 @@ export default function App() {
   const registration = async (data) => {
     try {
       await auth.register(data)
-      .then(() => {
-        setIsLoading(true)
-        setIsRegister({
-          status: true,
-          message: 'Вы успешно зарегестрировались!'
-        });
-        login({email: data.email, password: data.password})
-      })} catch (err) {
-        setIsRegister({
-          status: false,
-          message: 'Что-то пошло не так! Попробуйте ещё раз.'
-        });
-        console.error(err);
-      } finally {
-        setIsLoading(false)
-      }
+        .then(() => {
+          setIsLoading(true)
+          setIsRegister({
+            status: true,
+            message: RESPONSE_MESSAGE.register
+          });
+          login({email: data.email, password: data.password})
+        })} catch (err) {
+          setIsRegister({
+            status: false,
+            message: RESPONSE_MESSAGE.error
+          });
+          console.error(err);
+        } finally {
+          setIsLoading(false)
+        }
   }
 
-  // функция авторизации
   const login = async (email, password) => {
     try {
       await auth.authorize(email, password)
-      .then((res) => {
-        setIsLoading(true)
-        setToken(res.token);
-        localStorage.setItem('jwt', res.token);
-        setIsLoggedIn(true)
-        navigate('/movies');
-      })} catch (err) {  
-        console.error(err);
-        setLoginFailed('Что-то пошло не так! Попробуйте ещё раз.')
-      } finally {
-        setIsLoading(false)
-      }
+        .then((res) => {
+          setIsLoading(true)
+          setToken(res.token);
+          localStorage.setItem('jwt', res.token);
+          setIsLoggedIn(true)
+          navigate('/movies');
+        })} catch (err) {  
+          console.error(err);
+          setLoginFailed(RESPONSE_MESSAGE.error)
+        } finally {
+          setIsLoading(false)
+        }
   }
 
-  // функция выхода из учетной записи
   const logOut = () => {
     localStorage.clear();
     setIsLoggedIn(false);
@@ -169,21 +169,30 @@ export default function App() {
     navigate('/');
   }
 
-  // функция обновления профиля
   const handleUpdateProfile = (email, name) => {
     return api.editUserProfile(email, name)
       .then((res) => {
         setCurrentUser(res);
-        setIsLoading(true)
+        setIsLoading(true);
+        setProfileMessage(RESPONSE_MESSAGE.profileUPD);
+        setTimeout(() => {
+          setProfileMessage('')
+        }, 1500)
       })
-      .catch(console.error)
+      .catch((err) => {
+        setProfileMessage(RESPONSE_MESSAGE.profileERR);
+        console(err);
+      })
       .finally(() => {
-        //Поставил таймер чтобы убедиться что работает
         setTimeout(() => {
           setIsLoading(false)
-        }, 500)
+        }, 300)
       })
   }
+
+  const goBack = () => {
+    navigate(-1);
+  }  
 
   if(isLoading) {
     return <Preloader />
@@ -192,88 +201,93 @@ export default function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <MoviesProvider>
-        <div className='root'>
-          {headerPaths.includes(path) && (
-            <Header 
-              isLoggedIn={isLoggedIn}
-            />
-          )}
-          <Routes>
-            <Route 
-              path='/'
-              element= {
-                <Main />
-              }
-            />
-            <Route element={<ProtectedRouteElement  isLoggedIn={isLoggedIn}/>}>
-              <Route
-                  path='/movies'
+        <PageProvider>
+          <div className='root'>
+            {headerPaths.includes(path) && (
+              <Header 
+                isLoggedIn={isLoggedIn}
+              />
+            )}
+            <Routes>
+              <Route 
+                path='/'
+                element= {
+                  <Main />
+                }
+              />
+              <Route element={<ProtectedRouteElement  isLoggedIn={isLoggedIn}/>}>
+                <Route
+                    path='/movies'
+                    element= {
+                      <Movies 
+                        movies={movies}
+                        getMovies={getMovies}
+                        saveMovie={saveMovie}
+                        deleteMovie={deleteMovie}
+                        checkSavedMovies={checkSavedMovies}
+                      />
+                    }
+                  />
+              </Route>
+              <Route element={<ProtectedRouteElement  isLoggedIn={isLoggedIn}/>}>
+                <Route
+                  path='/saved-movies'
                   element= {
-                    <Movies 
-                      movies={movies}
-                      getMovies={getMovies}
-                      saveMovie={saveMovie}
+                    <SavedMovies 
+                      movies={savedMovies}
                       deleteMovie={deleteMovie}
                       checkSavedMovies={checkSavedMovies}
                     />
                   }
                 />
-            </Route>
-            <Route element={<ProtectedRouteElement  isLoggedIn={isLoggedIn}/>}>
-              <Route
-                path='/saved-movies'
-                element= {
-                  <SavedMovies 
-                    movies={savedMovies}
-                    deleteMovie={deleteMovie}
-                    checkSavedMovies={checkSavedMovies}
-                  />
-                }
-              />
-            </Route>
-            <Route element={<ProtectedRouteElement  isLoggedIn={!isLoggedIn}/>}>
-              <Route
-                path='/signin'
-                element= {
-                  <Login 
-                    login={login}
-                    isLoggedIn={isLoggedIn}
-                    errorMessage={loginFailed}
-                  />
-                }
-              />
-            </Route>
-            <Route 
-              path='/signup'
-              element={
-                <Register 
-                  registration={registration}
-                  isRegister={isRegister}
+              </Route>
+              <Route element={<ProtectedRouteElement  isLoggedIn={!isLoggedIn}/>}>
+                <Route
+                  path='/signin'
+                  element= {
+                    <Login 
+                      login={login}
+                      isLoggedIn={isLoggedIn}
+                      errorMessage={loginFailed}
+                    />
+                  }
                 />
-              }
-            />
-            <Route element={<ProtectedRouteElement  isLoggedIn={isLoggedIn}/>}>
+              </Route>
               <Route 
-                path='/profile'
+                path='/signup'
                 element={
-                  <Profile 
-                    logOut={logOut}
-                    onUpdateUser={handleUpdateProfile}
+                  <Register 
+                    registration={registration}
+                    isRegister={isRegister}
                   />
                 }
               />
-            </Route>
-            <Route 
-              path='/*'
-              element={
-                <NotFound />
-              }
-            />
-          </Routes>
-          {footerPaths.includes(path) && (
-            <Footer />
-          )}
-        </div>
+              <Route element={<ProtectedRouteElement  isLoggedIn={isLoggedIn}/>}>
+                <Route 
+                  path='/profile'
+                  element={
+                    <Profile 
+                      logOut={logOut}
+                      onUpdateUser={handleUpdateProfile}
+                      profileMessage={profileMessage}
+                    />
+                  }
+                />
+              </Route>
+              <Route 
+                path='*'
+                element={
+                  <NotFound 
+                    goBack={goBack}
+                  />
+                }
+              />
+            </Routes>
+            {footerPaths.includes(path) && (
+              <Footer />
+            )}
+          </div>
+        </PageProvider>
       </MoviesProvider>
     </CurrentUserContext.Provider>
   )
