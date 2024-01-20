@@ -3,7 +3,6 @@ import React from 'react';
 
 export default function NotFound({goBack}) {
 
-
   return (
     <section className='not-found'>
       <div className='not-found__container'>

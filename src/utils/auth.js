@@ -21,11 +21,7 @@ function _request(url, method, body, token) {
     };
 
     return fetch(url, options)
-            .then(checkResponse)
-            // .catch(error => {
-            //     console.error(error);
-            //     throw error;
-            // });
+            .then(checkResponse);
 }
 
 export const register = ({name, email, password}) => {

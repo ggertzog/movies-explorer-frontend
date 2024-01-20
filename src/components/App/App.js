@@ -3,8 +3,8 @@ import './App.css'
 import React,  { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import { PageProvider } from '../../contexts/PageContext';
 import { MoviesProvider } from '../../contexts/MoviesContext';
+import { PageProvider } from '../../contexts/PageContext';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
