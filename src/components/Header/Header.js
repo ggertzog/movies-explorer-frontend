@@ -1,11 +1,15 @@
 import './Header.css';
-import React, { useState, useEffect } from 'react';
+
 import headerLogo from '../../images/logo.svg';
+
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
 import Navigation from '../Navigation/Navigation';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { WINDOW_WIDTH } from '../../utils/constants';
 
-export default function Header({loggedIn}) {
+export default function Header({isLoggedIn}) {
 
     const page = useLocation();
 
@@ -30,14 +34,16 @@ export default function Header({loggedIn}) {
                 <Link className='header__link' to='/'>
                     <img className='header__logo' src={headerLogo} alt='лого' />
                 </Link>
-                { windowWidth >= 769 ? (
+                { windowWidth >= WINDOW_WIDTH.medium ? (
                     <Navigation 
-                        loggedIn={loggedIn}
+                        isLoggedIn={isLoggedIn}
                         page={page}
                         changeColor={changeColor}
                     />
                 ) : (
-                    <BurgerMenu />
+                    <BurgerMenu 
+                        isLoggedIn={isLoggedIn}
+                    />
                 )
                 }
             </div>

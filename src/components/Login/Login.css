@@ -20,7 +20,7 @@
     width: 38px;
     height: 38px;
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     padding: 0;
     cursor: pointer;
     transition: .3s linear 0s;
@@ -97,7 +97,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 159px;
+    margin-top: 132px;
 }
 
 .login__button {
@@ -108,14 +108,19 @@
     line-height: normal;
     text-align: center;
     width: 100%;
-    margin: 0;
-    margin-bottom: 16px;
+    margin: 10px 0 16px;
     padding: 13px 0 15px 0;
     border: none;
     border-radius: 3px;
     background: #FF6838;
     cursor: pointer;
     transition: .3s linear 0s;
+}
+
+.login__button_type_disabled {
+    background: #F8F8F8;
+    color: #C2C2C2;
+    cursor: auto;
 }
 
 .login__button:hover {
@@ -143,14 +148,11 @@
     color: #FF6838;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .login {
         padding: 232px 0;
     }
 
-    .login__button-container {
-        margin-top: 162px;
-    }
 }
 
 @media screen and (max-width: 490px) {
@@ -178,7 +180,7 @@
     }
 
     .login__button-container {
-        margin-top: 249px;
+        margin-top: 220px;
     }
 
     .login__button {
