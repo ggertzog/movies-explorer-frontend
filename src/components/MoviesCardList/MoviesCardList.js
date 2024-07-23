@@ -3,7 +3,6 @@ import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import cards from '../../utils/cards';
 
-
 export default function MoviesCardList() {
   return (
     <>
